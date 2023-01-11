@@ -1,3 +1,8 @@
+[![Actions Status](https://github.com/maddbuzz/rails-project-63/actions/workflows/CI.yml/badge.svg)](https://github.com/maddbuzz/rails-project-63/actions/workflows/CI.yml)
+[![Actions Status](https://github.com/maddbuzz/rails-project-63/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/maddbuzz/rails-project-63/actions/workflows/hexlet-check.yml)
+[![Actions Status](https://github.com/maddbuzz/rails-project-63/actions/workflows/main.yml/badge.svg)](https://github.com/maddbuzz/rails-project-63/actions/workflows/main.yml)
+
+
 # HexletCode
 
 TODO: Delete this and the text below, and describe your gem
