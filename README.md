@@ -31,11 +31,12 @@ make test
 User = Struct.new(:name, :job, :gender, keyword_init: true)
 
 # Create a specific user and fill in the fields:
-user = User.new name: 'rob', job: 'hexlet', gender: 'm'
+user = User.new name: 'rob', job: 'hexlet'
 
 # This user is then used to generate the HTML form:
 HexletCode.form_for user do |f|
   f.input :name
+  f.input :gender
   f.input :job, as: :text
   f.submit
 end
@@ -43,6 +44,8 @@ end
 # <form action="#" method="post">
 #   <label for="name">Name</label>
 #   <input name="name" type="text" value="rob">
+#   <label for="gender">Gender</label>
+#   <input name="gender" type="text" value="">
 #   <label for="job">Job</label>
 #   <textarea name="job" cols="20" rows="40">hexlet</textarea>
 #   <input type="submit" value="Save">

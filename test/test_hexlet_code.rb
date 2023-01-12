@@ -11,7 +11,7 @@ class TestHexletCode < TestCase
 
   User = Struct.new(:name, :job, :gender, keyword_init: true)
   def setup
-    @user = User.new name: 'rob', job: 'hexlet', gender: 'm'
+    @user = User.new name: 'rob', job: 'hexlet'
   end
 
   def make_html_oneline(html)
@@ -23,6 +23,7 @@ class TestHexletCode < TestCase
     actual_html =
       HexletCode.form_for @user do |f|
         f.input :name
+        f.input :gender
         f.input :job, as: :text
       end
     assert { actual_html == expected_html }
