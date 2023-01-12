@@ -55,4 +55,12 @@ class TestHexletCode < TestCase
       end
     assert { actual_html == expected_html }
   end
+
+  def test_form_for_missing_field
+    assert_raises NoMethodError do
+      HexletCode.form_for @user do |f|
+        f.input :age
+      end
+    end
+  end
 end
