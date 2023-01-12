@@ -8,7 +8,7 @@
 
 Примеры использования:
 
-```
+```ruby
 User = Struct.new(:name, :job, :gender, keyword_init: true)
 user = User.new name: 'rob', job: 'hexlet', gender: 'm'
 
@@ -25,7 +25,7 @@ end
 
 Для полей можно указать дополнительные атрибуты в виде хеша последним параметром:
 
-```
+```ruby
 HexletCode.form_for user, url: '#' do |f|
   f.input :name, class: 'user-input'
   f.input :job
@@ -39,7 +39,7 @@ end
 
 У полей могут быть дефолтные значения, которые можно переопределить:
 
-```
+```ruby
 HexletCode.form_for user do |f|
   f.input :job, as: :text
 end
