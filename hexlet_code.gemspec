@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.email = ['maddbuzz@gmail.com']
 
   spec.summary = 'Form Generator is a DSL that makes it easy to generate forms.'
-  spec.description = 'Form Generator is a DSL that makes it easy to generate forms.'
+  spec.description = "Form Generator is a library with which it is convenient to create forms in site templates. \
+Allows you to reduce the form description code many times over due to automatic error handling and various controls."
   spec.homepage = 'https://github.com/maddbuzz/rails-project-63'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.1.2'

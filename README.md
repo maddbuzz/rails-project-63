@@ -6,22 +6,18 @@
 
 Form Generator is a library with which it is convenient to create forms in site templates. Allows you to reduce the form description code many times over due to automatic error handling and various controls.
 
-## Install dependencies
+## Installation
+
+Bundler has the ability to install gems directly from git repositories. Installing a gem using git is as easy as adding a gem to your Gemfile:
+
+```
+gem 'hexlet_code', git: 'https://github.com/maddbuzz/rails-project-63'
+```
+
+### Install dependencies
 
 ```sh
 make install
-```
-
-## Run linter
-
-```sh
-make lint
-```
-
-## Run tests
-
-```sh
-make test
 ```
 
 ## How to use
