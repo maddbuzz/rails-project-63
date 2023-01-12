@@ -18,8 +18,37 @@ module HexletCode
     end
   end
 
-  def self.form_for(_user, url: '#')
-    f = Tag.build('form', action: url, method: 'post') { '' }
-    yield f
+  class Form
+    def initialize(user, url)
+      @user = user
+      @url = url
+      @children = []
+    end
+
+    def input(name, as: nil, **kwargs)
+      return textarea(name, **kwargs) if as == :text
+
+      value = @user.public_send(name)
+      @children << Tag.build('input', name:, type: 'text', value:, **kwargs)
+    end
+
+    def textarea(name, **kwargs)
+      default_params = { cols: '20', rows: '40' }
+      params = default_params.merge(kwargs)
+      value = @user.public_send(name)
+      @children << Tag.build('textarea', name:, **params) { value }
+    end
+
+    def to_s
+      Tag.build('form', action: @url, method: 'post') do
+        @children.join
+      end
+    end
+  end
+
+  def self.form_for(user, url: '#')
+    form = Form.new user, url
+    yield form
+    form.to_s
   end
 end
