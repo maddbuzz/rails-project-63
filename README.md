@@ -22,15 +22,13 @@ HexletCode.form_for user do |f|
   f.submit
 end
 =>
-```
-```html
-<form action="#" method="post">
-  <label for="name">Name</label>
-  <input name="name" type="text" value="rob">
-  <label for="job">Job</label>
-  <textarea name="job" cols="20" rows="40">hexlet</textarea>
-  <input type="submit" value="Save">
-</form>
+# <form action="#" method="post">
+#   <label for="name">Name</label>
+#   <input name="name" type="text" value="rob">
+#   <label for="job">Job</label>
+#   <textarea name="job" cols="20" rows="40">hexlet</textarea>
+#   <input type="submit" value="Save">
+# </form>
 ```
 
 Для полей можно указать дополнительные атрибуты в виде хеша последним параметром:
@@ -41,14 +39,12 @@ HexletCode.form_for user, url: '#' do |f|
   f.input :job
 end
 =>
-```
-```html
-<form action="#" method="post">
-  <label for="name">Name</label>
-  <input name="name" type="text" value="rob" class="user-input">
-  <label for="job">Job</label>
-  <input name="job" type="text" value="hexlet">
-</form>
+# <form action="#" method="post">
+#   <label for="name">Name</label>
+#   <input name="name" type="text" value="rob" class="user-input">
+#   <label for="job">Job</label>
+#   <input name="job" type="text" value="hexlet">
+# </form>
 ```
 
 У полей могут быть дефолтные значения, которые можно переопределить:
@@ -59,13 +55,11 @@ HexletCode.form_for user do |f|
   f.submit
 end
 =>
-```
-```html
-<form action="#" method="post">
-  <label for="job">Job</label>
-  <textarea name="job" cols="30" rows="30">hexlet</textarea>
-  <input type="submit" value="Save">
-</form>
+# <form action="#" method="post">
+#   <label for="job">Job</label>
+#   <textarea name="job" cols="30" rows="30">hexlet</textarea>
+#   <input type="submit" value="Save">
+# </form>
 ```
 
 По умолчанию метод submit() использует как имя кнопки значение 'Save', но его можно переопределить передав первым аргументом нужный текст. Генератор может принимать url, тогда он будет использован в качестве адреса при отправке формы:
@@ -76,13 +70,11 @@ HexletCode.form_for user, url: '/users' do |f|
   f.submit 'Wow'
 end
 =>
-```
-```html
-<form action="/users" method="post">
-  <label for="job">Job</label>
-  <textarea name="job" cols="50" rows="50">hexlet</textarea>
-  <input type="submit" value="Wow">
-</form>
+# <form action="/users" method="post">
+#   <label for="job">Job</label>
+#   <textarea name="job" cols="50" rows="50">hexlet</textarea>
+#   <input type="submit" value="Wow">
+# </form>
 ```
 
 ## Install dependencies
