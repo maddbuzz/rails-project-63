@@ -77,6 +77,16 @@ end
 # </form>
 ```
 
+Возможно и изменять/добавлять атрибуты формы:
+
+```ruby
+HexletCode.form_for @user, url: '/profile', method: :get, class: 'hexlet-form', &:submit
+=>
+# <form action="/profile" method="get" class="hexlet-form">
+#   <input type="submit" value="Save">
+# </form>
+```
+
 ## Install dependencies
 
 ```sh

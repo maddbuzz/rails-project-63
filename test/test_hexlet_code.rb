@@ -58,6 +58,13 @@ class TestHexletCode < TestCase
     assert { actual_html == expected_html }
   end
 
+  def test_form_for5
+    expected_html = make_html_oneline(load_fixture('expected5.html'))
+    actual_html =
+      HexletCode.form_for @user, url: '/profile', method: :get, class: 'hexlet-form', &:submit
+    assert { actual_html == expected_html }
+  end
+
   def test_form_for_missing_field
     assert_raises NoMethodError do
       HexletCode.form_for @user do |f|
