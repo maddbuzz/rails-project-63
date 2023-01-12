@@ -43,6 +43,7 @@ class TestHexletCode < TestCase
     actual_html =
       HexletCode.form_for @user do |f|
         f.input :job, as: :text
+        f.submit
       end
     assert { actual_html == expected_html }
   end
@@ -50,8 +51,9 @@ class TestHexletCode < TestCase
   def test_form_for4
     expected_html = make_html_oneline(load_fixture('expected4.html'))
     actual_html =
-      HexletCode.form_for @user, url: '#' do |f|
+      HexletCode.form_for @user, url: '/users' do |f|
         f.input :job, as: :text, rows: 50, cols: 50
+        f.submit 'Wow'
       end
     assert { actual_html == expected_html }
   end

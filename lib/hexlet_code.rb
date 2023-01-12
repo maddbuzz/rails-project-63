@@ -26,6 +26,7 @@ module HexletCode
     end
 
     def input(name, as: nil, **kwargs)
+      @children << Tag.build('label', for: name) { name.capitalize }
       return textarea(name, **kwargs) if as == :text
 
       value = @user.public_send(name)
@@ -37,6 +38,10 @@ module HexletCode
       params = default_params.merge(kwargs)
       value = @user.public_send(name)
       @children << Tag.build('textarea', name:, **params) { value }
+    end
+
+    def submit(value = 'Save')
+      @children << Tag.build('input', type: 'submit', value:)
     end
 
     def to_s
