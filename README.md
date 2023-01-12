@@ -33,7 +33,7 @@ end
 =>
 # <form action="#" method="post">
 #   <input name="name" type="text" value="rob" class="user-input">
-#   <input name="job" type="text" value="">
+#   <input name="job" type="text" value="hexlet">
 # </form>
 ```
 
