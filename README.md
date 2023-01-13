@@ -14,15 +14,19 @@ Bundler has the ability to install gems directly from git repositories. Installi
 gem 'hexlet_code', git: 'https://github.com/maddbuzz/rails-project-63'
 ```
 
-### Install dependencies
+Install dependencies from your Gemfile:
 
 ```sh
-make install
+bundle install
 ```
 
 ## How to use
 
 ```ruby
+require 'rubygems'
+require 'bundler/setup'
+require 'hexlet_code'
+
 # Create a User class with name, job and gender fields:
 User = Struct.new(:name, :job, :gender, keyword_init: true)
 
