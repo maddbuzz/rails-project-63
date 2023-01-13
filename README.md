@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/maddbuzz/rails-project-63/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/maddbuzz/rails-project-63/actions/workflows/hexlet-check.yml)
 [![Actions Status](https://github.com/maddbuzz/rails-project-63/actions/workflows/main.yml/badge.svg)](https://github.com/maddbuzz/rails-project-63/actions/workflows/main.yml)
 
-# Form Generator is a DSL that makes it easy to generate forms
+# HexletCode is a DSL that makes it easy to generate forms
 
 Form Generator is a library with which it is convenient to create forms in site templates. Allows you to reduce the form description code many times over due to automatic error handling and various controls.
 
