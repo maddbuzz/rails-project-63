@@ -4,7 +4,7 @@
 
 # HexletCode is a DSL that makes it easy to generate forms
 
-Form Generator is a library with which it is convenient to create forms in site templates. Allows you to reduce the form description code many times over due to automatic error handling and various controls.
+A library with which it is convenient to create forms in site templates. This is a popular task for which there are many libraries, such as the [library](https://guides.rubyonrails.org/form_helpers.html) built into Rails or the popular [SimpleForm](https://github.com/heartcombo/simple_form) gem.
 
 ## Installation
 
