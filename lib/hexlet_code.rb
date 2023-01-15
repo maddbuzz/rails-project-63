@@ -9,8 +9,18 @@ module HexletCode
 
   def self.form_for(entity, url: '#', method: 'post', **kwargs)
     form = Form.new entity, attributes: { action: url, method:, **kwargs }
-    yield form if block_given?
+    yield form
+
     node = form.node
-    Tag.build(node[:tag_name], node[:attributes]) { node[:body] }
+    Tag.build(node[:tag_name], node[:attributes]) do
+      node[:body]
+        .map do |child|
+          node = child.node
+          body = node[:body]
+          block = body && proc { body }
+          Tag.build(node[:tag_name], node[:attributes], &block)
+        end
+        .join
+    end
   end
 end
