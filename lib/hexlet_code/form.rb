@@ -1,47 +1,47 @@
 # frozen_string_literal: true
 
-autoload('Node', 'hexlet_code/node')
+autoload('Element', 'hexlet_code/element')
 
-class Form < Node
+class Form < Element
   def initialize(entity, attributes:)
     @entity = entity
-    super tag_name: 'form', attributes:, body: []
+    super tag_name: 'form', attributes:, content: []
   end
 
   def input(name, as: :input, **kwargs)
-    @node[:body] << Label.new(name)
+    @element[:content] << Label.new(name)
     value = @entity.public_send(name)
     control_class = Form.const_get(as.capitalize)
-    @node[:body] << control_class.new(name, value, **kwargs)
+    @element[:content] << control_class.new(name, value, **kwargs)
   end
 
   def submit(value = 'Save')
-    @node[:body] << Submit.new(value)
+    @element[:content] << Submit.new(value)
   end
 
-  class Submit < Node
+  class Submit < Element
     def initialize(value)
-      super tag_name: 'input', attributes: { type: 'submit', value: }, body: nil
+      super tag_name: 'input', attributes: { type: 'submit', value: }, content: nil
     end
   end
 
-  class Label < Node
+  class Label < Element
     def initialize(name)
-      super tag_name: 'label', attributes: { for: name }, body: name.capitalize
+      super tag_name: 'label', attributes: { for: name }, content: name.capitalize
     end
   end
 
-  class Input < Node
+  class Input < Element
     def initialize(name, value, **kwargs)
-      super tag_name: 'input', attributes: { name:, type: 'text', value:, **kwargs }, body: nil
+      super tag_name: 'input', attributes: { name:, type: 'text', value:, **kwargs }, content: nil
     end
   end
 
-  class Text < Node
+  class Text < Element
     def initialize(name, value, **kwargs)
       default_params = { cols: '20', rows: '40' }
       params = default_params.merge(kwargs)
-      super tag_name: 'textarea', attributes: { name:, **params }, body: value
+      super tag_name: 'textarea', attributes: { name:, **params }, content: value
     end
   end
 end

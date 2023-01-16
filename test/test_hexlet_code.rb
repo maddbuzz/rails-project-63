@@ -7,13 +7,9 @@ class TestHexletCode < TestCase
     refute_nil ::HexletCode::VERSION
   end
 
-  User = Struct.new(:name, :job, :gender, keyword_init: true)
   def setup
-    @user = User.new name: 'rob', job: 'hexlet'
-  end
-
-  def make_html_oneline(html)
-    html.split("\n").map(&:strip).join
+    user_class = Struct.new(:name, :job, :gender, keyword_init: true)
+    @user = user_class.new name: 'rob', job: 'hexlet'
   end
 
   def test_form_for1

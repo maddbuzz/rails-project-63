@@ -11,14 +11,14 @@ module HexletCode
     form = Form.new entity, attributes: { action: url, method:, **kwargs }
     yield form
 
-    node = form.node
-    Tag.build(node[:tag_name], node[:attributes]) do
-      node[:body]
+    element = form.element
+    Tag.build(element[:tag_name], element[:attributes]) do
+      element[:content]
         .map do |child|
-          node = child.node
-          body = node[:body]
-          block = body && proc { body }
-          Tag.build(node[:tag_name], node[:attributes], &block)
+          element = child.element
+          content = element[:content]
+          block_with_content = content && proc { content }
+          Tag.build(element[:tag_name], element[:attributes], &block_with_content)
         end
         .join
     end
