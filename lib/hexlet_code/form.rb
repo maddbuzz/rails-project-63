@@ -5,7 +5,7 @@ autoload('Element', 'hexlet_code/element')
 class Form < Element
   def initialize(entity, attributes:)
     @entity = entity
-    super tag_name: 'form', attributes:, content: []
+    super name: 'form', attributes:, content: []
   end
 
   def input(name, as: :input, **kwargs)
@@ -21,19 +21,19 @@ class Form < Element
 
   class Submit < Element
     def initialize(value)
-      super tag_name: 'input', attributes: { type: 'submit', value: }, content: nil
+      super name: 'input', attributes: { type: 'submit', value: }
     end
   end
 
   class Label < Element
     def initialize(name)
-      super tag_name: 'label', attributes: { for: name }, content: name.capitalize
+      super name: 'label', attributes: { for: name }, content: name.capitalize
     end
   end
 
   class Input < Element
     def initialize(name, value, **kwargs)
-      super tag_name: 'input', attributes: { name:, type: 'text', value:, **kwargs }, content: nil
+      super name: 'input', attributes: { name:, type: 'text', value:, **kwargs }
     end
   end
 
@@ -41,7 +41,7 @@ class Form < Element
     def initialize(name, value, **kwargs)
       default_params = { cols: '20', rows: '40' }
       params = default_params.merge(kwargs)
-      super tag_name: 'textarea', attributes: { name:, **params }, content: value
+      super name: 'textarea', attributes: { name:, **params }, content: value
     end
   end
 end

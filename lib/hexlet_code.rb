@@ -12,13 +12,13 @@ module HexletCode
     yield form
 
     element = form.element
-    Tag.build(element[:tag_name], element[:attributes]) do
+    Tag.build(element[:name], element[:attributes]) do
       element[:content]
         .map do |child|
           element = child.element
           content = element[:content]
           block_with_content = content && proc { content }
-          Tag.build(element[:tag_name], element[:attributes], &block_with_content)
+          Tag.build(element[:name], element[:attributes], &block_with_content)
         end
         .join
     end
