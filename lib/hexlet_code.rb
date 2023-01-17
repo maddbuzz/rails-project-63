@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'hexlet_code/version'
-autoload('Form', 'hexlet_code/form')
+require_relative 'hexlet_code/form'
 autoload('Tag', 'hexlet_code/tag')
 
 module HexletCode
