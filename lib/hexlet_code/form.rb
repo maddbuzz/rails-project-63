@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'element'
-autoload('Elements', 'hexlet_code/elements')
+autoload :Element, 'hexlet_code/element'
+autoload :Elements, 'hexlet_code/elements'
 
 class Form < Element
   def initialize(entity, attributes:)

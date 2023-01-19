@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'hexlet_code/version'
-require_relative 'hexlet_code/form'
-autoload('Tag', 'hexlet_code/tag')
+autoload :Form, 'hexlet_code/form'
+autoload :Tag, 'hexlet_code/tag'
 
 module HexletCode
   class Error < StandardError; end
@@ -17,8 +17,8 @@ module HexletCode
         .map do |child|
           element = child.element
           content = element[:content]
-          block_with_content = content && proc { content }
-          Tag.build(element[:name], element[:attributes], &block_with_content)
+          block = content && proc { content }
+          Tag.build(element[:name], element[:attributes], &block)
         end
         .join
     end
