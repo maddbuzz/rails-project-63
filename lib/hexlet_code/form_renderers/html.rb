@@ -2,7 +2,7 @@
 
 autoload :Tag, 'hexlet_code/tag'
 
-module Renderers
+module FormRenderers
   module HTML
     def self.render(form)
       element = form.element
